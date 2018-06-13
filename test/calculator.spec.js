@@ -1,14 +1,25 @@
-import { mount } from "@vue/test-utils";
-import Calculator from "../app/Calculator";
+import { mount } from '@vue/test-utils';
+import Calculator from '../app/Calculator';
 
-describe("Calculator.test.js", () => {
-    let vm;
+describe('Calculator.test.js', () => {
+    let wrapper;
 
     beforeEach(() => {
-        vm = mount(Calculator);
+        wrapper = mount(Calculator);
     });
 
-    it("should create a Vue instace on mount", () => {
-        expect(vm.isVueInstance()).toBeTruthy();
+    afterEach(() => {
+        wrapper.vm.$destroy();
+        wrapper.vm.$el.remove();
+        wrapper = null;
+    });
+
+    it('should create a Vue instace on mount', () => {
+        expect(wrapper.isVueInstance()).toBeTruthy();
+    });
+
+    it('should have results and buttons sections in the DOM', () => {
+        expect(wrapper.find('.results').exists()).toBeTruthy();
+        expect(wrapper.find('.buttons').exists()).toBeTruthy();
     });
 });
