@@ -22,4 +22,16 @@ describe('Calculator.test.js', () => {
         expect(wrapper.find('.results').exists()).toBeTruthy();
         expect(wrapper.find('.buttons').exists()).toBeTruthy();
     });
+
+    it('should have memory operations inside button panels', () => {
+        expect(wrapper.find('.buttons .memory-ops').exists()).toBeTruthy();
+    });
+
+    it('should have extra operations inside button panels', () => {
+        expect(wrapper.find('.buttons .extra-ops').exists()).toBeTruthy();
+    });
+
+    it('should have standard operations inside button panels', () => {
+        expect(wrapper.find('.buttons .standard-ops').exists()).toBeTruthy();
+    });
 });
