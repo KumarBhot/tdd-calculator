@@ -1,6 +1,7 @@
 <template>
     <div class="calculator">
         <div class="header">Calculator</div>
+        <div class="operation">0</div>
         <div class="results">0</div>
         <div class="buttons">
             <div class="memory-ops">
@@ -72,10 +73,19 @@
     font-size: 50%;
 }
 
+.operation,
 .header,
 .results,
 .buttons {
     padding: 0.5rem;
+}
+
+.operation {
+    text-align: right;
+}
+
+.operation:after {
+    content: " =";
 }
 
 .header {
