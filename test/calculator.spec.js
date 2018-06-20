@@ -18,9 +18,9 @@ describe('Component :: Calculator.test.js', () => {
         expect(wrapper.isVueInstance()).toBeTruthy();
     });
 
-    it('should have operation, results and buttons sections in the DOM', () => {
+    it('should have operation, result and buttons sections in the DOM', () => {
         expect(wrapper.find('.operation').exists()).toBeTruthy();
-        expect(wrapper.find('.results').exists()).toBeTruthy();
+        expect(wrapper.find('.result').exists()).toBeTruthy();
         expect(wrapper.find('.buttons').exists()).toBeTruthy();
     });
 
@@ -48,5 +48,10 @@ describe('Unit :: Calculator.test.js', () => {
         wrapper.vm.$destroy();
         wrapper.vm.$el.remove();
         wrapper = null;
+    });
+
+    it('should have operation and result properties set to 0 at mount', () => {
+        expect(wrapper.vm.operation).toEqual(0);
+        expect(wrapper.vm.result).toEqual(0);
     });
 });
