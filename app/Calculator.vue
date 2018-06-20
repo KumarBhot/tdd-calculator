@@ -1,8 +1,8 @@
 <template>
     <div class="calculator">
         <div class="header">Calculator</div>
-        <div class="operation">0</div>
-        <div class="results">0</div>
+        <div class="operation">{{ operation }}</div>
+        <div class="result">{{ result }}</div>
         <div class="buttons">
             <div class="memory-ops">
                 <button value="mc">MC</button>
@@ -52,7 +52,9 @@
     module.exports = {
         data () {
             return {
-                name: 'Simple Calculator'
+                name: 'Simple Calculator',
+                operation: 0,
+                result: 0
             };
         },
         methods: {
@@ -75,7 +77,7 @@
 
 .operation,
 .header,
-.results,
+.result,
 .buttons {
     padding: 0.5rem;
 }
@@ -94,7 +96,7 @@
     font-weight: bold;
 }
 
-.results {
+.result {
     text-align: right;
     color: darkolivegreen;
     font-size: 200%;
