@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import Calculator from '../app/Calculator';
 
-describe('Calculator.test.js', () => {
+describe('Component :: Calculator.test.js', () => {
     let wrapper;
 
     beforeEach(() => {
@@ -18,7 +18,8 @@ describe('Calculator.test.js', () => {
         expect(wrapper.isVueInstance()).toBeTruthy();
     });
 
-    it('should have results and buttons sections in the DOM', () => {
+    it('should have operation, results and buttons sections in the DOM', () => {
+        expect(wrapper.find('.operation').exists()).toBeTruthy();
         expect(wrapper.find('.results').exists()).toBeTruthy();
         expect(wrapper.find('.buttons').exists()).toBeTruthy();
     });
@@ -33,5 +34,19 @@ describe('Calculator.test.js', () => {
 
     it('should have standard operations inside button panels', () => {
         expect(wrapper.find('.buttons .standard-ops').exists()).toBeTruthy();
+    });
+});
+
+describe('Unit :: Calculator.test.js', () => {
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = mount(Calculator);
+    });
+
+    afterEach(() => {
+        wrapper.vm.$destroy();
+        wrapper.vm.$el.remove();
+        wrapper = null;
     });
 });
