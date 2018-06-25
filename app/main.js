@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Calculator from './calculator.vue';
+import Calculator from './Calculator.vue';
 
 new Vue({
     el: 'calculator',

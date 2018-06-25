@@ -24,16 +24,16 @@ describe('Component :: Calculator.test.js', () => {
         expect(wrapper.find('.buttons').exists()).toBeTruthy();
     });
 
-    it('should have memory operations inside button panels', () => {
-        expect(wrapper.find('.buttons .memory-ops').exists()).toBeTruthy();
+    it('should have memory section inside button panels', () => {
+        expect(wrapper.find('.buttons .memory').exists()).toBeTruthy();
     });
 
-    it('should have extra operations inside button panels', () => {
-        expect(wrapper.find('.buttons .extra-ops').exists()).toBeTruthy();
+    it('should have special section inside button panels', () => {
+        expect(wrapper.find('.buttons .special').exists()).toBeTruthy();
     });
 
-    it('should have standard operations inside button panels', () => {
-        expect(wrapper.find('.buttons .standard-ops').exists()).toBeTruthy();
+    it('should have standard section inside button panels', () => {
+        expect(wrapper.find('.buttons .standard').exists()).toBeTruthy();
     });
 });
 
